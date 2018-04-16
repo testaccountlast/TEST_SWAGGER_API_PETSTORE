@@ -40,13 +40,6 @@ class TestPetApi(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def test_add_pet(self):
-        """Test case for add_pet
-
-        Add a new pet to the store  # noqa: E501
-        """
-        pass
-
     def test_delete_pet(self):
         """Test case for delete_pet
 
@@ -72,13 +65,6 @@ class TestPetApi(unittest.TestCase):
         """Test case for get_pet_by_id
 
         Find pet by ID  # noqa: E501
-        """
-        pass
-
-    def test_update_pet(self):
-        """Test case for update_pet
-
-        Update an existing pet  # noqa: E501
         """
         pass
 

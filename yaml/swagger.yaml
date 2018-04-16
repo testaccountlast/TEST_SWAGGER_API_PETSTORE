@@ -16,7 +16,7 @@ info:
 # host: petstore.swagger.io
 # basePath: /v2
 tags:
-- name: pet
+- name: pets
   description: Everything about your Pets
   externalDocs:
     description: Find out more
@@ -34,7 +34,7 @@ paths:
   /pet:
     post:
       tags:
-      - pet
+      - pets
       summary: Add a new pet to the store
       operationId: addPet
       consumes:
@@ -59,7 +59,7 @@ paths:
         - read:pets
     put:
       tags:
-      - pet
+      - pets
       summary: Update an existing pet
       operationId: updatePet
       consumes:

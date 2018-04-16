@@ -28,6 +28,7 @@ from __future__ import absolute_import
 
 # import apis into sdk package
 from swagger_client.api.pet_api import PetApi
+from swagger_client.api.pets_api import PetsApi
 from swagger_client.api.store_api import StoreApi
 from swagger_client.api.user_api import UserApi
 

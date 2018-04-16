@@ -55,13 +55,14 @@ from pprint import pprint
 swagger_client.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = swagger_client.PetApi()
-body = swagger_client.Pet() # Pet | Pet object that needs to be added to the store
+pet_id = 789 # int | Pet id to delete
+api_key = 'api_key_example' # str |  (optional)
 
 try:
-    # Add a new pet to the store
-    api_instance.add_pet(body)
+    # Deletes a pet
+    api_instance.delete_pet(pet_id, api_key=api_key)
 except ApiException as e:
-    print("Exception when calling PetApi->add_pet: %s\n" % e)
+    print("Exception when calling PetApi->delete_pet: %s\n" % e)
 
 ```
 
@@ -71,14 +72,14 @@ All URIs are relative to *https://virtserver.swaggerhub.com/TEST_GITHUB_ORG/TEST
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*PetApi* | [**add_pet**](docs/PetApi.md#add_pet) | **POST** /pet | Add a new pet to the store
 *PetApi* | [**delete_pet**](docs/PetApi.md#delete_pet) | **DELETE** /pet/{petId} | Deletes a pet
 *PetApi* | [**find_pets_by_status**](docs/PetApi.md#find_pets_by_status) | **GET** /pet/findByStatus | Finds Pets by status
 *PetApi* | [**find_pets_by_tags**](docs/PetApi.md#find_pets_by_tags) | **GET** /pet/findByTags | Finds Pets by tags
 *PetApi* | [**get_pet_by_id**](docs/PetApi.md#get_pet_by_id) | **GET** /pet/{petId} | Find pet by ID
-*PetApi* | [**update_pet**](docs/PetApi.md#update_pet) | **PUT** /pet | Update an existing pet
 *PetApi* | [**update_pet_with_form**](docs/PetApi.md#update_pet_with_form) | **POST** /pet/{petId} | Updates a pet in the store with form data
 *PetApi* | [**upload_file**](docs/PetApi.md#upload_file) | **POST** /pet/{petId}/uploadImage | uploads an image
+*PetsApi* | [**add_pet**](docs/PetsApi.md#add_pet) | **POST** /pet | Add a new pet to the store
+*PetsApi* | [**update_pet**](docs/PetsApi.md#update_pet) | **PUT** /pet | Update an existing pet
 *StoreApi* | [**delete_order**](docs/StoreApi.md#delete_order) | **DELETE** /store/order/{orderId} | Delete purchase order by ID
 *StoreApi* | [**get_inventory**](docs/StoreApi.md#get_inventory) | **GET** /store/inventory | Returns pet inventories by status
 *StoreApi* | [**get_order_by_id**](docs/StoreApi.md#get_order_by_id) | **GET** /store/order/{orderId} | Find purchase order by ID

@@ -16,7 +16,7 @@ info:
 # host: petstore.swagger.io
 # basePath: /v2
 tags:
-- name: pets
+- name: pet
   description: Everything about your Pets
   externalDocs:
     description: Find out more
@@ -559,6 +559,44 @@ paths:
           description: Invalid username supplied
         404:
           description: User not found
+  /test:
+    get:
+      tags:
+      - test
+      summary: Finds Pets by status
+      description: Multiple status values can be provided with comma separated strings
+      operationId: findPetsByStatus
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: status
+        in: query
+        description: Status values that need to be considered for filter
+        required: true
+        type: array
+        items:
+          type: string
+          enum:
+          - available
+          - pending
+          - sold
+          default: available
+        collectionFormat: multi
+      responses:
+        200:
+          description: successful operation
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Pet'
+        400:
+          description: Invalid status value
+      security:
+      - petstore_auth:
+        - write:pets
+        - read:pets
+          
 securityDefinitions:
   petstore_auth:
     type: oauth2

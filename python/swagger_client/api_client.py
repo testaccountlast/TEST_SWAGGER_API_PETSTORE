@@ -205,7 +205,7 @@ class ApiClient(object):
                 for sub_obj in obj)
         elif isinstance(obj, (datetime.datetime, datetime.date)):
             return obj.isoformat()
-        else:
+
             if isinstance(obj, dict):
                 obj_dict = obj
             else:
